@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books - In the World of Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">In the World of Books</h1>
+      <p class="site-subtitle"><em>Read more. Imagine more.</em></p>
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="genres.html">Genres</a></li>
+            <li class="nav-item"><a class="nav-link active" href="books.html">Books</a></li>
+            <li class="nav-item"><a class="nav-link" href="authors.html">Top Authors</a></li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input id="api-search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="search-section container my-4">
+    <div class="card p-4 shadow-sm border-0">
+        <h3>Search in Global Database</h3>
+        <div class="input-group mb-3">
+            <input type="text" id="global-search-input" class="form-control" placeholder="Enter book title...">
+            <button class="btn btn-primary" id="api-search-btn">Search Everywhere</button>
+        </div>
+        <div id="api-results" class="row row-cols-1 row-cols-md-3 g-4"></div>
+    </div>
+</div>
+<section class="container card my-5 text-center p-4 border-0 shadow-lg mx-auto" style="max-width: 900px;">
+    <h2>My Reading List</h2>
+    <p class="text-muted">Plan your next literary adventure!</p>
+
+    <div class="input-group mb-2">
+        <input type="text" id="book-input" class="form-control" placeholder="Enter a book title...">
+    </div>
+
+    <div class="d-flex gap-2 mb-3 align-items-center justify-content-center">
+        <button id="add-btn" class="btn btn-outline-danger">Add Item</button>
+        <button id="remove-btn" class="btn btn-outline-danger">Remove Item</button>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+        <input class="form-check-input" type="checkbox" id="use-prepend">
+        <label class="form-check-label small text-muted" for="use-prepend">
+            Add to the beginning (priority)
+        </label>
+    </div>
+
+    <ul id="reading-list" class="list-group">
+        </ul>
+</section>
+
+    <main class="container mb-5">
+
+    <h2 class="genre-divider" id="fantasy">Fantasy</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="book-cover-wrapper rounded-top text-center">
+            <span class="badge bg-danger rating-badge">4.6</span>
+            <img src="images/Harry Potter and the Philosopher's Stone.jfif" alt="Harry Potter">
+          </div>
+          <div class="card-body">
+            <h6 class="fw-bold mb-1">Harry Potter and the Philosopher's Stone</h6>
+            <p class="small text-muted mb-0">J.K. Rowling</p>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="star-rating">★★★★☆</div>
+                <span class="heart-btn" data-id="fantasy-hp1">🤍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="book-cover-wrapper rounded-top text-center">
+            <span class="badge bg-danger rating-badge">4.0</span>
+            <img src="images/70978477.jpg" alt="Percy Jackson">
+          </div>
+          <div class="card-body">
+            <h6 class="fw-bold mb-1">Percy Jackson and the Lightning Thief</h6>
+            <p class="small text-muted mb-0">Rick Riordan</p>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="star-rating">★★★★☆</div>
+                <span class="heart-btn" data-id="fantasy-percy1">🤍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="genre-divider" id="detective">Detective</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="book-cover-wrapper rounded-top text-center">
+            <span class="badge bg-danger rating-badge">4.4</span>
+            <img src="images/018eda52-fa37-7086-a4c0-0325d1d99090.jpg" alt="Agatha Christie">
+          </div>
+          <div class="card-body">
+            <h6 class="fw-bold mb-1">And Then There Were None</h6>
+            <p class="small text-muted mb-0">Agatha Christie</p>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="star-rating">★★★★☆</div>
+                <span class="heart-btn" data-id="detective-agatha1">🤍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="book-cover-wrapper rounded-top text-center">
+            <span class="badge bg-danger rating-badge">4.0</span>
+            <img src="images/48188e5f4d6969175cce1b35d485c083.jpg" alt="Agatha Christie">
+          </div>
+          <div class="card-body">
+            <h6 class="fw-bold mb-1">Murder on the Orient Express</h6>
+            <p class="small text-muted mb-0">Agatha Christie</p>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="star-rating">★★★★☆</div>
+                <span class="heart-btn" data-id="detective-agatha2">🤍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="genre-divider" id="romance">Romance</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="book-cover-wrapper rounded-top text-center">
+            <span class="badge bg-dark rating-badge">3.5!</span>
+            <img src="images/The Love Hypothesis.jfif" alt="The Love Hypothesis">
+          </div>
+          <div class="card-body">
+            <h6 class="fw-bold mb-1">The Love Hypothesis</h6>
+            <p class="small text-muted mb-0">Ali Hazelwood</p>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="star-rating">★★★☆☆</div>
+                <span class="heart-btn" data-id="romance-love1">🤍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="book-cover-wrapper rounded-top text-center">
+            <span class="badge bg-dark rating-badge">2.6!</span>
+            <img src="images/the-notebook.jpg" alt="The Notebook">
+          </div>
+          <div class="card-body">
+            <h6 class="fw-bold mb-1">The Notebook</h6>
+            <p class="small text-muted mb-0">Nicholas Sparks</p>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="star-rating">★★☆☆☆</div>
+                <span class="heart-btn" data-id="romance-notebook1">🤍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="genre-divider" id="classic">Classical Literature</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="book-cover-wrapper rounded-top text-center">
+            <span class="badge bg-danger rating-badge">4.5</span>
+            <img src="images/6945733700.jpg" alt="Pride and Prejudice">
+          </div>
+          <div class="card-body">
+            <h6 class="fw-bold mb-1">Pride and Prejudice</h6>
+            <p class="small text-muted mb-0">Jane Austen</p>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="star-rating">★★★★☆</div>
+                <span class="heart-btn" data-id="classic-pride1">🤍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="book-cover-wrapper rounded-top text-center">
+            <span class="badge bg-danger rating-badge">4.0</span>
+            <img src="images/little-women-159.jpg" alt="Little Women">
+          </div>
+          <div class="card-body">
+            <h6 class="fw-bold mb-1">Little Women</h6>
+            <p class="small text-muted mb-0">Louisa M. Alcott</p>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="star-rating">★★★★☆</div>
+                <span class="heart-btn" data-id="classic-women1">🤍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+<section class="card my-7 text-center p-5 border-1 shadow-lg mx-auto" style="max-width: 1500px;"> <id="sorting-tool-section" >
+    <h2>Sort book ratings</h2>
+    <p>Enter ratings to sort them</p>
+    <form id="sort-form">
+        <label for="number-input">Metrics:</label>
+        <input type="text" id="number-input" placeholder="e.g., 4.5 3.8 4.9">
+    <div style="margin: 16px 0;">
+            <label style="display: block; margin-bottom: 10px;">Order:</label>
+            <div style="display: flex; gap: 24px; align-items: center;">
+                <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; margin: 0; cursor: pointer;">
+                    <input type="radio" name="order" value="asc" checked>
+                    <span>Ascending order</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; margin: 0; cursor: pointer;">
+                    <input type="radio" name="order" value="desc">
+                    <span>Descending order</span>
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-danger">Sort it out</button>
+    </form>
+    
+    <div id="sort-result" style="margin-top: 15px; font-weight: bold; color: var(--main);"></div>
+    <div id="sort-error" style="margin-top: 8px; color: #9a1712; font-size: 0.95rem;"></div>
+</section>
+
+
+
+<section class="container card my-5 text-center p-4 border-0 shadow-lg mx-auto" style="max-width: 900px;">
+    <h2>Book Delivery Service</h2>
+    <p class="text-muted">Order your favorite story, and we will deliver it from our press straight to your door!</p>
+    
+    <div id="delivery-scene" style="height: 300px; position: relative; background: linear-gradient(to bottom, #bdecf2, #d7feba); border-bottom: 10px solid #260303; overflow: hidden; border-radius: 10px;">
+        <div style="position: absolute; top: 20px; left: 10%; font-size: 30px; opacity: 0.5;">☁️</div>
+        <div style="position: absolute; top: 50px; left: 60%; font-size: 40px; opacity: 0.3;">☁️</div>
+        
+        <div style="position: absolute; left: 10px; bottom: 10px; font-size: 40px;">🏭<br><small style="font-size: 12px; display:block;">Factory</small></div>
+        
+        <div style="position: absolute; right: 10px; bottom: 10px; font-size: 40px;">🏠<br><small style="font-size: 12px; display:block;">You</small></div>
+
+        <div id="flying-book" style="width: 50px; height: 70px; background: #9a1712; color: white; position: absolute; bottom: 20px; left: 20px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 5px 5px 10px rgba(54, 46, 46, 0.2); cursor: pointer; z-index: 10;">
+            book
+        </div>
+    </div>
+    
+    <button id="start-journey" class="btn btn-danger mt-3">Order & Deliver Book</button>
+</section>
+
+
+  <footer class="site-footer py-4 mt-5">
+    <div class="container footer-box">
+      <hr>
+      <address>Created for Web Tech Assignment 1/2/3/4/5/6 by Adilya Kairbekova and Danira Zhanpiissova</address>
+      <p>2026, In the World of Books. All rights reserved.</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+  <script src="books.js"></script>
+</body>
+</html>
