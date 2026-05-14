@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genres - In the World of Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .genre-divider {
+      background-color: #ffffff; 
+      padding: 15px 20px;
+      border-left: 4px solid #dc3545;
+      border-radius: 4px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .genre-divider:hover {
+      background-color: #f8f9fa; 
+    }
+    .genre-divider h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 0;
+      color: #333;
+    }
+    .genre-icon {
+      font-size: 1.1rem;
+      color: #dc3545;
+    }
+
+    .book-cover-wrapper {
+      position: relative;
+      background-color: #f8f9fa;
+      padding: 10px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px 4px 0 0;
+    }
+    .book-cover-wrapper img {
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 2px;
+    }
+    .rating-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      font-size: 0.75rem;
+    }
+    .book-card-inner {
+      border: 1px solid #eee;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <div class="container text-center py-3">
+      <h1 class="site-title">In the World of Books</h1>
+      <p class="site-subtitle"><em>Read more. Imagine more.</em></p>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light shadow-sm mb-4">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="genres.html">Genres</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="authors.html">Top Authors</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    
+    <section class="card p-4 mb-5 shadow-sm border-0 bg-white" id="guessing-game-section">
+        <h2 class="fw-bold text-danger mb-3">Genre Quiz</h2>
+        <p>The system has set the number of books from <strong>1 to 100</strong>. Try to guess how many works are in our collection of genres!</p>
+        
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+            <input type="number" id="guess-input" min="1" max="100" placeholder="Enter 1–100" style="flex: 1; min-width: 150px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            <button id="guess-btn" class="btn btn-outline-danger">To guess</button>
+            <button id="restart-btn" class="btn btn-outline-danger" style="display:none;">Start over</button>
+        </div>
+        
+        <p id="game-feedback" style="margin-top: 15px; font-weight: bold; min-height: 1.5rem;"></p>
+        <p id="attempts-count" class="text-muted small">Tries: 0</p>
+    </section>
+<h2 class="text-center fw-bold mb-5">Explore Book Genres</h2>
+    <div id="dynamic-genres-sections">
+      
+      <div class="genre-divider shadow-sm">
+          <h4>Fantasy</h4>
+          <span class="genre-icon">Click to expand</span>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4 mb-4" id="fantasy-container" style="display: none;"></div>
+
+      <div class="genre-divider shadow-sm">
+          <h4>Detective</h4>
+          <span class="genre-icon">Click to expand</span>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4 mb-4" id="detective-container" style="display: none;"></div>
+
+      <div class="genre-divider shadow-sm">
+          <h4>Romance</h4>
+          <span class="genre-icon">Click to expand</span>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4 mb-4" id="romance-container" style="display: none;"></div>
+
+      <div class="genre-divider shadow-sm">
+          <h4>Classic</h4>
+          <span class="genre-icon">Click to expand</span>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4 mb-4" id="classic-container" style="display: none;"></div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer py-4 mt-5 bg-light border-top">
+    <div class="container text-center">
+      <address>Created for Web Tech Assignment 1/2/3/4/5/6 by Adilya Kairbekova and Danira Zhanpiissova</address>
+      <p>2026, In the World of Books. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="genres.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

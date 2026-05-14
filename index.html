@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In the World of Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    #welcome-title {
+      letter-spacing: 1px;
+    }
+
+    .quote-word {
+      color: #7b2d3a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body id="top">
+
+<header class="site-header">
+    <div class="container">
+      <h1 class="site-title">In the World of Books</h1>
+      <p class="site-subtitle"><em>Read more. Imagine more.</em></p>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="genres.html">Genres</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="books.html">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="authors.html">Top Authors</a>
+      </li>
+    </ul>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-danger" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+  </header>
+
+  <main class="container">
+    <section class="py-5">
+  <div class="container-fluid">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <span class="badge bg-danger mb-3">Spring collection</span>
+        <h1 class="display-6 fw-bold mb-3">Welcome to the world of books</h1>
+        <p class="text-muted">This small website is about books, genres, and reading choices.</p>
+        <p><strong>Books</strong> can give adventure, emotions, mystery and new ideas.</p>
+        
+<section class="card text-center" style="margin-top: 12px;">
+    <h4>Date & Time of the Website Update</h4>
+    <p id="live-datetime" class="fw-bold text-danger"></p>
+</section>
+
+        <div class="mt-4">
+          <a href="genres.html" class="btn btn-outline-danger me-2">See genres</a>
+          <a href="authors.html" class="btn btn-outline-danger me-2">See our top authors</a>
+          <a href="https://www.gutenberg.org/" class="btn btn-outline-danger">External library</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <figure class="figure">
+          <img src="images/books.jfif" class="rounded" alt="Book cover">
+          <figcaption class="figure-caption text-muted mt-2">Soft colors were chosen to match the reference style.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="card text-center">
+    <h2>Personalize your view!</h2>
+    <button id="color-btn" class="btn btn-outline-danger">Change Color</button>
+</section>
+
+
+    <section class="card">
+      <h2>Reader form</h2>
+      <p class="small-note">This form was added to meet the assignment requirement.</p>
+
+      <form action="#" method="post" id="reader-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <input type="submit" value="Submit" class="btn">
+      </form>
+    </section>
+
+    <section class="container my-5">
+      <div class="row g-4 clearfix">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+        <h3>What you can find here</h3>
+        <ul class="list-group">
+        <li class="list-group-item">Fantasy books</li>
+        <li class="list-group-item">Detective stories</li>
+        <li class="list-group-item">Romance books</li>
+        <li class="list-group-item">Classical literature</li>
+        </ul>
+            </div>
+            </div>
+        </div>
+      <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+        <h3>How to use the site</h3>
+        <ol class="list-group">
+          <li class="list-group-item">Open the genres page</li>
+          <li class="list-group-item">Choose a category</li>
+          <li class="list-group-item">Go to the books page</li>
+          <li class="list-group-item">Read short information about each book</li>
+        </ol>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="container my-4">
+      <div class="card">
+  <div class="card-header">
+    Quote section
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Favorite quote</h5>
+    <p class="card-text">“Literature is the most pleasant way to ignore life.”</p>
+    <footer>— Fernando Pessoa</footer>
+  <div class="card mt-4" id="selectors-demo">
+  <h4 class="mb-3">Interisting facts</h4>
+  <p id="quote-note" class="text-muted">Hover over the title to reveal a secret.</p>
+  <p class="interactive-hint">The most popular book in the world is the Bible.</p>
+  <button id="apply-btn" class="btn btn-outline-danger mt-2">Reveal another fact</button>
+  <button id="reset-btn" class="btn btn-outline-danger mt-2">Restore Original</button>
+</div>
+  </div>
+</div>
+    </section>
+
+    <div class="container mt-3">
+  <h2>Schedule for adding new books</h2>           
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Book</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>The Escape Game</td>
+        <td>April 7</td>
+        <td>18:00</td>
+      </tr>
+      <tr>
+        <td>A Brewed Awakening</td>
+        <td>May 5</td>
+        <td>14:00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </section>
+  
+ <section class="container my-5">
+  <h2 class="text-center mb-4">Site Creators</h2>
+  <div class="row g-4 justify-content-center">
+  <div class="col-md-6 col-lg-5">
+      <div class="card h-100 shadow-sm">
+        <div class="row g-0 align-items-center">
+          <div class="col-4">
+            <img src="Adilya.jpg" class="img-fluid rounded-start" alt="Creator One" style="object-fit: cover; height: 100%;">
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Adilya Kairbekova</h5>
+              <p class="card-text small text-muted">A student at Astana IT University. Responsible for HTML structure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5">
+      <div class="card h-100 shadow-sm">
+        <div class="row g-0 align-items-center">
+          <div class="col-4">
+            <img src="danira creator.jpg" class="img-fluid rounded-start" alt="Creator Two" style="object-fit: cover; height: 100%;">
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Danira Zhanpiissova</h5>
+              <p class="card-text small text-muted">A student at Astana IT University. Responsible for CSS architecture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div> 
+</section>
+</main>
+
+  <footer class="site-footer py-4 mt-5">
+    <div class="container footer-box">
+      <hr>
+      <address>Created for Web Tech Assignment 1/2/3/4/5/6 by Adilya Kairbekova and Danira Zhanpiissova</address>
+      <p>2026, In the World of Books. All rights reserved.</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+
+</body>
+</html>
